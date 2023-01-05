@@ -1,0 +1,7 @@
+FormTables formTables = new FormTables();//переменная экземпляра класса формы
+            fillDGVClass fillDGVClass = new fillDGVClass();//переменная экземпляра класса заполнения dataGridView
+            string TableName = "Заказы";// при нажатии на кнопку мы будем обращаться к этой таблице в базе
+            formTables.SetColumnCount(fillDGVClass.ColumnCount(TableName));//устанавливаем количество столбцов datagridview(принимая переменную из метода класса)
+            formTables.SetTableName(TableName);//устанавливаем название таблицы, для её заполнения
+            formTables.SetqueryString($"SELECT * FROM {TableName}");// устанавливаем запрос для выборки данных
+            formTables.ShowDialog();
